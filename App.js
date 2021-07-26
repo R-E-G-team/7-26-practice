@@ -6,39 +6,43 @@ import {
   View,
   Text,
   TextInput,
-  TouchableHighlight,
+  TouchableOpacity,
 } from "react-native";
 
 export default function App() {
-  const [id, password] = useState("");
-  const [massage, setMassage] = useState("");
+  const [id, setId] = useState("");
+  const [password, setPassword] = useState("");
+  const [massage, setMassage] = useState("당신의 계정을 입력하세요!");
 
   const checkingIdPW = () => {
-    if (id == "dori" && password == "1234") {
-      setMassage("");
+    if (id === "dori" && password === "1234") {
+      setMassage("로그인 성공");
+    }
+    else {
+      setMassage("로그인 실패");
     }
   };
 
   return (
     <View style={styles.container}>
       <View>
-        <Text>당신의 계정을 입력하세요!</Text>
+        <Text>{massage}</Text>
       </View>
       <TextInput
         style={styles.textInput}
         placeholder="id"
         value={id}
-        onChange={(value) => (id = value)}
+        onChangeText={(value) => setId(value)}
       ></TextInput>
       <TextInput
         style={styles.textInput}
         placeholder="password"
         value={password}
-        onChange={(value) => (password = value)}
+        onChangeText={(value) => setPassword(value)}
       ></TextInput>
-      <TouchableHighlight style={styles.signIn}>
+      <TouchableOpacity style={styles.signIn} onPress={checkingIdPW}>
         <Text>Sign In</Text>
-      </TouchableHighlight>
+      </TouchableOpacity>
     </View>
   );
 }
