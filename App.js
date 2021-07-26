@@ -9,11 +9,12 @@ import {
 
 export default function App() {
   return (
-    <View style={{padding:20}}>
-      <Text>1</Text>
+    <View style={{padding: 20}}>
+      <Text>2</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  
 });
