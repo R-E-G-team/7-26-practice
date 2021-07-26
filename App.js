@@ -26,7 +26,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <View>
-        <Text>{massage}</Text>
+        <Text>{message}</Text>
       </View>
       <TextInput
         style={styles.textInput}
