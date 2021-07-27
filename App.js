@@ -10,39 +10,15 @@ import {
 } from "react-native";
 
 export default function App() {
-  const [id, setId] = useState("");
-  const [password, setPassword] = useState("");
-  const [massage, setMassage] = useState("당신의 계정을 입력하세요!");
+  const [rgId, setRgId] = useState("");
+  const [rgPassword, setRgPassword] = useState("");
 
-  const checkingIdPW = () => {
-    if (id === "dori" && password === "1234") {
-      setMassage("로그인 성공");
-    }
-    else {
-      setMassage("로그인 실패");
-    }
-  };
+  const logInCheck = () => {
+    
+  }
 
   return (
     <View style={styles.container}>
-      <View>
-        <Text>{message}</Text>
-      </View>
-      <TextInput
-        style={styles.textInput}
-        placeholder="id"
-        value={id}
-        onChangeText={(value) => setId(value)}
-      ></TextInput>
-      <TextInput
-        style={styles.textInput}
-        placeholder="password"
-        value={password}
-        onChangeText={(value) => setPassword(value)}
-      ></TextInput>
-      <TouchableOpacity style={styles.signIn} onPress={checkingIdPW}>
-        <Text>Sign In</Text>
-      </TouchableOpacity>
     </View>
   );
 }
