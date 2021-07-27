@@ -14,23 +14,23 @@ import SignUp from "./screens/SignUp";
 export default function App() {
   const [rgId, setRgId] = useState("");
   const [rgPassword, setRgPassword] = useState("");
+  const [isLogin, setIsLogin] = useState(true);
 
-  const logInCheck = () => {
-    
-  }
-
-  return (
-    <View style={styles.container}>
-  {/* const [isLogin, setIsLogin] = useState(true);
+  const signUpHandler = (putId, putPassword) => {
+    setRgId(putId);
+    setRgPassword(putPassword);
+  };
 
   const onClick = () => {
     setIsLogin(!isLogin);
   };
 
+  const logInCheck = () => {};
+
   return (
     <View>
-        { isLogin && <SignIn onClick={onClick}/> }
-        { !isLogin && <SignUp onClick={onClick}/> } */}
+      {isLogin && <SignIn onClick={onClick} id={rgId} password={rgPassword} />}
+      {!isLogin && <SignUp onClick={onClick} onSignUp={signUpHandler} />}
     </View>
   );
 }

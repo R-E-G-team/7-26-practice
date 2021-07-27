@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 import {
-  StyleSheet,
   View,
   Text,
   TextInput,
   TouchableOpacity,
+  StyleSheet,
 } from "react-native";
 
-const SignIn = (props) => {
+const Login = (props) => {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("당신의 계정을 입력하세요!");
 
   const checkingIdPW = () => {
-    if (id === "dori" && password === "1234") {
+    if (props.id === id && props.password === password) {
       setMessage("로그인 성공");
     } else {
       setMessage("로그인 실패");
@@ -78,4 +78,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default SignIn;
+export default Login;

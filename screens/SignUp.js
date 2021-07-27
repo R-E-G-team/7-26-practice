@@ -1,28 +1,27 @@
 import React, { useState } from "react";
 import {
-  StyleSheet,
   View,
   Text,
   TextInput,
   TouchableOpacity,
+  StyleSheet,
 } from "react-native";
 
-const SignUp = (props) => {
+const Regist = (props) => {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("새로운 계정을 입력하세요!");
 
-  const checkingIdPW = () => {
-    if (id === "dori" && password === "1234") {
-      setMessage("로그인 성공");
-    } else {
-      setMessage("로그인 실패");
-    }
+  const registHandler = () => {
+    props.onSignUp(id, password);
+    setMessage("회원가입 성공");
+    props.onClick();
   };
 
   return (
     <View style={styles.container}>
       <View>
-        <Text>새로운 계정을 입력하세요!</Text>
+        <Text>{message}</Text>
       </View>
       <TextInput
         style={styles.textInput}
@@ -36,7 +35,7 @@ const SignUp = (props) => {
         value={password}
         onChangeText={(value) => setPassword(value)}
       ></TextInput>
-      <TouchableOpacity style={styles.signIn} onPress={checkingIdPW}>
+      <TouchableOpacity style={styles.signIn} onPress={registHandler}>
         <Text>Sign Up</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.cancle} onPress={props.onClick}>
@@ -86,4 +85,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default SignUp;
+export default Regist;
