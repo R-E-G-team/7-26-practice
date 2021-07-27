@@ -1,6 +1,5 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
-
 import {
   StyleSheet,
   View,
@@ -8,6 +7,9 @@ import {
   TextInput,
   TouchableOpacity,
 } from "react-native";
+
+import SignIn from "./screens/SignIn";
+import SignUp from "./screens/SignUp";
 
 export default function App() {
   const [rgId, setRgId] = useState("");
@@ -19,33 +21,18 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+  {/* const [isLogin, setIsLogin] = useState(true);
+
+  const onClick = () => {
+    setIsLogin(!isLogin);
+  };
+
+  return (
+    <View>
+        { isLogin && <SignIn onClick={onClick}/> }
+        { !isLogin && <SignUp onClick={onClick}/> } */}
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    padding: 20,
-    width: "100%",
-    height: "100%",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  textInput: {
-    width: "100%",
-    height: 50,
-    paddingLeft: 20,
-    margin: 10,
-    borderWidth: 1,
-    borderColor: "#aaaaaa",
-    borderRadius: 20,
-  },
-  signIn: {
-    backgroundColor: "#bbbbff",
-    borderRadius: 20,
-    width: "100%",
-    height: 50,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+const styles = StyleSheet.create({});
