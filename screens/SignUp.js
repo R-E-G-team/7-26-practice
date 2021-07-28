@@ -7,7 +7,7 @@ import {
   StyleSheet,
 } from "react-native";
 
-const Regist = (props) => {
+const SingUp = (props) => {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("새로운 계정을 입력하세요!");
@@ -85,4 +85,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Regist;
+export default SingUp;

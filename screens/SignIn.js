@@ -7,7 +7,7 @@ import {
   StyleSheet,
 } from "react-native";
 
-const Login = (props) => {
+const SignIn = (props) => {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("당신의 계정을 입력하세요!");
@@ -78,4 +78,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Login;
+export default SignIn;
