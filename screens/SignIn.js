@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import {
-  StyleSheet,
   View,
   Text,
   TextInput,
   TouchableOpacity,
+  StyleSheet,
 } from "react-native";
 
 const SignIn = (props) => {
@@ -13,7 +13,7 @@ const SignIn = (props) => {
   const [message, setMessage] = useState("당신의 계정을 입력하세요!");
 
   const checkingIdPW = () => {
-    if (id === "dori" && password === "1234") {
+    if (props.id === id && props.password === password) {
       setMessage("로그인 성공");
     } else {
       setMessage("로그인 실패");
