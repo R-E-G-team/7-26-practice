@@ -20,7 +20,7 @@ export default function App() {
     setRgId(putId);
     setRgPassword(putPassword);
   };
-
+  
   const onClick = () => {
     setIsLogin(!isLogin);
   };
